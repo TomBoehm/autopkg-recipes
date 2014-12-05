@@ -138,8 +138,10 @@ class LibreOfficeURLProvider(Processor):
     
     def main(self):
         base_url = self.create_url()
-        self.env["url"] = self.get_libreoffice_dmg_url(base_url)
-        self.output("Found URL %s" % self.env["url"])
+        myString = self.get_libreoffice_dmg_url(base_url)
+        myString = myString.replace('.dmg', '_langpack_de.dmg')
+        self.env["url"] = myString
+        self.output("Found Language Pack URL %s" % self.env["url"])
 
 
 if __name__ == "__main__":
