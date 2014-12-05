@@ -131,7 +131,8 @@ class LibreOfficeURLProvider(Processor):
         type_component = '='.join(['type', type])
         lang_component = '='.join(['lang', language_code])
         request_string = '&'.join([type_component, lang_component])
-        self.output("TOM %s" % request_string)
+        self.output("TOM - Base: %s" % base_url_start)
+        self.output("TOM - Requ: %s" % request_string)
         return '?'.join([base_url_start, request_string])
     
     
